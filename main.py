@@ -33,12 +33,12 @@ for cmd in commands:
         print(f"{RED}Error: {e}{RESET}")
 
 
-print(f"{GREEN}Restarting Windows Explorer!{RESET}")
-try:
-    subprocess.run("taskkill /f /im explorer.exe /t", shell=True, check=False)
-    subprocess.Popen("%windir%\\explorer.exe", shell=True)
-except Exception as e:
-    print(f"{RED}Error: {e}{RESET}")
+# print(f"{GREEN}Restarting Windows Explorer!{RESET}")
+# try:
+#     subprocess.run("taskkill /f /im explorer.exe /t", shell=True, check=False)
+#     subprocess.Popen("%windir%\\explorer.exe", shell=True)
+# except Exception as e:
+#     print(f"{RED}Error: {e}{RESET}")
 
 
 print(
