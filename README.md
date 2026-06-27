@@ -81,7 +81,7 @@ The script uses these Windows commands:
 To build the executable from source:
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --icon=icon.ico main.py
+pyinstaller --noconfirm --onefile --console --icon "icon.ico" --name "Lyenx Cleanup" --uac-admin "main.py"
 ```
 
 The compiled executable will be in the `dist` folder.
