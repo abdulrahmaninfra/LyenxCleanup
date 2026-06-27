@@ -42,17 +42,19 @@ except Exception as e:
 
 
 print(
-    "\n Do you wanna restart?\n 1. Yes, Press (yes,y,yeah,yep)\n 2. Nope (nah,no,neh,n)"
+    "\n Do you wanna restart?\n 1. Yes, Press (1,yes,y,yeah,yep)\n 2. Nope (2,nah,no,neh,n)"
 )
 userRestartInput = input(" >>> ").strip().lower()
 
-if userRestartInput.startswith("y"):
+if userRestartInput.startswith("y") or userRestartInput == 1:
     run_command("shutdown /r /t 5")
     print(f"{RED}System will be restarted in 5 Seconds!!{RESET}")
-elif userRestartInput.startswith("n"):
+
+elif userRestartInput.startswith("n") or userRestartInput == 2:
     print(f"{GREEN}Thank you!!{RESET}")
     print("MADE BY: github.com/abdulrahmaninfra\n AKA: Lyenx")
     input("Press any key to exit")
+
 else:
     print(f"Invalid input, Cancel restarting")
     print("MADE BY: github.com/abdulrahmaninfra\n AKA: Lyenx")
