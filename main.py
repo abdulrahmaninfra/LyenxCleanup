@@ -23,7 +23,7 @@ commands = [
     "del /f /s /q %systemdrive%\\*.gid",
     "del /f /s /q %systemdrive%\\*.chk",
     "ipconfig /flushdns",
-    "cleanmgr /autoclean",
+    "cleanmgr /sagerun:1",
 ]
 
 for cmd in commands:
