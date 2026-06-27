@@ -1,1 +1,0 @@
-pyinstaller --noconfirm --onedir --console --icon "C:\Users\nigga\Desktop\Projects\LyenxCleanup\icon.ico" --name "Lyenx Cleanup" --uac-admin  "C:\Users\nigga\Desktop\Projects\Ultimate Cleaner\main.py"
