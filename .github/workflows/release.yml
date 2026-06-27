@@ -38,6 +38,7 @@ jobs:
       - name: Create a Github Release
         uses: softprops/action-gh-release@v3
         with:
-          files: "dist/Lyenx Cleanup.exe"
           name: Release ${{ github.ref_name }}
+          files: "dist/Lyenx Cleanup.exe"
+          generate_release_notes: true
 
