@@ -1,0 +1,43 @@
+name: "Release OneFile by Pyinstaller"
+
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - 'V*'
+    
+jobs:
+    release:
+      runs-on: windows-latest
+      permissions:
+        contents: write
+
+      steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Update PIP & Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Code Linting with Flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Build LyenxCleanup
+        run: |
+          pyinstaller --noconfirm --onefile --console --icon "icon.ico" --name "Lyenx Cleanup" --uac-admin "main.py"
+
+      - name: Create a Github Release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: "dist/Lyenx Cleanup.exe"
+          name: Release ${{ github.ref_name }}
+
